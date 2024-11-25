@@ -1,0 +1,68 @@
+using System;
+
+class Virus
+{
+    public string nama;
+    public int size;
+    public int kemampuan;
+
+    public void menyebar()
+    {
+        Console.WriteLine("{0} menyebar dengan size {1}", this.nama, this.kemampuan);
+    }
+}
+
+class Worm
+{
+    public string nama;
+    public int kapasitas;
+
+    public void menghancurkanBios()
+    {
+        Console.WriteLine("{0} menghancurkan file yang ada di BIOS [kemampuan: {1}]", this.nama, this.kapasitas);
+    }
+
+    public void menyebar()
+    {
+        Console.WriteLine("{0} menyebar di sistem Windows", this.nama);
+    }
+}
+
+class Trojan
+{
+    public string nama;
+
+    public void menyusupBios()
+    {
+        Console.WriteLine("{0} menyusupkan file virus ke dalam BIOS [kemampuan utama: {1}]", this.nama);
+    }
+
+    public void menghancurkan()
+    {
+        Console.WriteLine("{0} merusak seluruh sistem", this.nama);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Virus virus1 = new Virus();
+        virus1.nama = "StuxNet";
+        virus1.size = 5;
+        virus1.kemampuan = 15;
+
+        Worm worm1 = new Worm();
+        worm1.nama = "Brontok";
+        worm1.kapasitas = 8;
+
+        Trojan trojan1 = new Trojan();
+        trojan1.nama = "Zeus";
+
+        virus1.menyebar();
+        worm1.menyebar();
+        worm1.menghancurkanBios();
+        trojan1.menyusupBios();
+        trojan1.menghancurkan();
+    }
+}
